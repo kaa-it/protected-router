@@ -34,7 +34,9 @@ code {
 .button {
   height: 40px;
   font-size: 20px;
-  padding: 10px;
+  padding: 40px 40px 60px 40px;
   border-radius: 10px;
+  min-width: 234px;
+  box-sizing: border-box;
   background-color: cadetblue;
 }
