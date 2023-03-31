@@ -21,6 +21,7 @@ export const login = () => {
             }, 1000);
         }).then(() => {
                 localStorage.setItem("accessToken", "test-token");
+                localStorage.setItem("refreshToken", "test-refresh-token");
                 dispatch(setUser({}));
                 dispatch(setAuthChecked(true));
             }
