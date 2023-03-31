@@ -31,9 +31,13 @@ export const login = () => {
 export const checkUserAuth = () => {
     return (dispatch) => {
         if (localStorage.getItem("accessToken")) {
-            dispatch(getUser()).finally(() => {
-                dispatch(setAuthChecked(true));
-            });
+            dispatch(getUser())
+              .catch(error => {
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("refreshToken");
+                dispatch(setUser({}));
+              })
+              .finally(() => dispatch(setAuthChecked(true)));
         } else {
             dispatch(setAuthChecked(true));
         }
