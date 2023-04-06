@@ -6,6 +6,7 @@ export const Home = () => {
     const onClick = () => {
         navigate("/profile");
     }
+
     return (
         <div className="page">
             <h1 className="title">Главная</h1>

@@ -19,8 +19,8 @@ function App() {
         <div className="app">
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/login" element={<OnlyUnAuth component={Login} />} />
-                <Route path="/profile" element={<OnlyAuth component={Profile} />} />
+                <Route path="/login" element={<OnlyUnAuth component={<Login/>} />} />
+                <Route path="/profile" element={<OnlyAuth component={<Profile/>} />} />
             </Routes>
         </div>
     );

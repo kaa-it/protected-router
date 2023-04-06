@@ -2,7 +2,7 @@ import {Navigate, useLocation} from "react-router-dom";
 import {useSelector} from "react-redux";
 import React from "react";
 
-const Protected = ({onlyUnAuth = false, component, ...rest}) => {
+const Protected = ({onlyUnAuth = false, component}) => {
     const isAuthChecked = useSelector(store => store.user.isAuthChecked);
     const user = useSelector(store => store.user.user);
     const location = useLocation();
@@ -27,8 +27,8 @@ const Protected = ({onlyUnAuth = false, component, ...rest}) => {
 
     // !onlyUnAuth && user
 
-    return component({...rest});
+    return component;
 };
 
 export const OnlyAuth = Protected;
-export const OnlyUnAuth = (props) => <Protected onlyUnAuth={true} {...props} />;
+export const OnlyUnAuth = () => <Protected onlyUnAuth={true} />;
